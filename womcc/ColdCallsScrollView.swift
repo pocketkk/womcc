@@ -6,8 +6,12 @@
 //  Copyright (c) 2014 Jason Crump. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class ColdCallsScrollView: UIScrollView {
 
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+        self.endEditing(true)
+        superview.touchesEnded(touches, withEvent: event)
+    }
 }

@@ -7,16 +7,63 @@
 //
 
 import UIKit
+import CoreData
 
-class ColdCallsTableViewController: UITableViewController {
+class ColdCallsCell: UITableViewCell {
+    @IBOutlet var cellLblBusiness: UILabel!
+    @IBOutlet var cellLblAddress: UILabel!
+    @IBOutlet var cellLblCount: UILabel!
+    
 
-    init(style: UITableViewStyle) {
-        super.init(style: style)
-        // Custom initialization
+    
+    init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+}
+
+
+class ColdCallsTableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, RMDateSelectionViewControllerDelegate {
+    
+    var coldCalls:ColdCalls[] = []
+    var selectedDay:NSDate = NSDate()
+    @IBOutlet var dateButtonText: UIButton!
+    
+    @IBAction func previousDay() {
+        selectedDay = selectedDay.addTimeInterval(-(60*60*24)) as NSDate
+        coldCalls = loadColdCalls()
+        //tableView.reloadData()
+        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Right)
+
+    }
+    
+    @IBAction func nextDay() {
+        selectedDay = selectedDay.addTimeInterval(60*60*24) as NSDate
+        coldCalls = loadColdCalls()
+        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Left)
     }
 
+    func dateSelectionViewController(vc: RMDateSelectionViewController!, didSelectDate aDate: NSDate!)  {
+            selectedDay = aDate
+            coldCalls = loadColdCalls()
+            tableView.reloadData()
+    }
+    
+    func dateSelectionViewControllerDidCancel(vc: RMDateSelectionViewController!) {
+        
+    }
+    
+    @IBAction func openDateSelectionController() {
+        let dateSelectionVC = RMDateSelectionViewController()
+        dateSelectionVC.delegate = self
+        dateSelectionVC.show()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        coldCalls = loadColdCalls()
+        println(coldCalls)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,10 +71,16 @@ class ColdCallsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    func loadColdCalls() -> ColdCalls[] {
+        var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        var context:NSManagedObjectContext = appDel.cdh.managedObjectContext
+        dateButtonText.setTitle(Date.toString(selectedDay), forState: UIControlState.Normal)
+        return ColdCalls.allFromDate(appDel, context: context, date: selectedDay)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // #pragma mark - Table view data source
@@ -35,24 +88,50 @@ class ColdCallsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return coldCalls.count
     }
 
-    /*
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell : ColdCallsCell? = self.tableView.dequeueReusableCellWithIdentifier("coldCallCell", forIndexPath: indexPath) as? ColdCallsCell
+        let coldCall:ColdCalls = self.coldCalls[indexPath!.row] as ColdCalls
+        cell!.cellLblBusiness.text = coldCall.business_name
+        cell!.cellLblAddress.text = coldCall.fullAddress()
+        cell!.cellLblCount.text = "\(indexPath!.row + 1)"
+        return cell as? ColdCallsCell
     }
-    */
+    
+    
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
+    }
+    
+    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+            var context:NSManagedObjectContext = appDel.cdh.managedObjectContext
+            context.deleteObject(coldCalls[indexPath.row])
+            context.save(nil)
+            self.coldCalls = self.loadColdCalls()
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func tableView(tableView: UITableView!, willDisplayHeaderView view: UIView!, forSection section: Int) {
+        
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -98,5 +177,12 @@ class ColdCallsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject) {
+        var detailsViewController: ColdCallsDetailViewController = segue.destinationViewController as ColdCallsDetailViewController
+        var coldCallIndex = tableView.indexPathForSelectedRow().row
+        var selectedColdCall = self.coldCalls[coldCallIndex]
+        detailsViewController.coldCall = selectedColdCall
+    }
 
 }

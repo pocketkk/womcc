@@ -4,7 +4,34 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
-        <!--Cold Calls Table View Controller - Cold Calls-->
+        <!--View Controller - Choose a Date-->
+        <scene sceneID="AMy-Tg-Trh">
+            <objects>
+                <viewController id="yIS-PL-Xmr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Flf-kM-0hD"/>
+                        <viewControllerLayoutGuide type="bottom" id="gaj-mI-NFK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m3o-4Y-WGL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HO6-Im-wnc">
+                                <rect key="frame" x="0.0" y="20" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="426014599.15056401">
+                                    <!--<__NSDate Class=2014-07-02 17:23:19 +0000 timeInterval=426014599.150564 ISO8601=2014-07-02T10:23:19.151-0700>-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose a Date" id="uQQ-RZ-iRY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ssz-JY-99S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1166" y="-609"/>
+        </scene>
+        <!--Cold Calls Table View Controller - Title-->
         <scene sceneID="uQ0-4D-EqK">
             <objects>
                 <tableViewController id="ZpM-hO-NRd" customClass="ColdCallsTableViewController" customModule="womcc" customModuleProvider="target" sceneMemberID="viewController">
@@ -12,6 +39,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="WbB-RL-R7y">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxy-6K-8iL">
+                                    <rect key="frame" x="95" y="11" width="131" height="22"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                    <state key="normal" title="Date">
+                                        <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="openDateSelectionController" destination="ZpM-hO-NRd" eventType="touchUpInside" id="4ZC-x2-8O2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3hr-cW-6rj">
+                                    <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="&lt;">
+                                                <attributes>
+                                                    <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="previousDay" destination="ZpM-hO-NRd" eventType="touchUpInside" id="CK9-gl-od2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSr-82-zRF">
+                                    <rect key="frame" x="270" y="7" width="30" height="30"/>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content=">">
+                                                <attributes>
+                                                    <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="nextDay" destination="ZpM-hO-NRd" eventType="touchUpInside" id="1kN-yD-16r"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="coldCallCell" rowHeight="67" id="qsQ-dn-G9v" customClass="ColdCallsCell" customModule="womcc" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -51,7 +125,10 @@
                             <outlet property="delegate" destination="ZpM-hO-NRd" id="d0c-lz-QHI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cold Calls" id="eBD-3G-smp"/>
+                    <navigationItem key="navigationItem" title="Title" id="oUf-Th-ObO"/>
+                    <connections>
+                        <outlet property="dateButtonText" destination="Fxy-6K-8iL" id="hAo-wZ-kHk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfF-Ij-Ew7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,9 +285,6 @@
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <segue destination="3fm-TJ-v1h" kind="push" identifier="return_to_new" id="daW-ca-tQm"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-IX-0fy">
                                         <rect key="frame" x="18" y="123" width="280" height="30"/>
@@ -294,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfM-kw-f1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1166" y="697"/>
+            <point key="canvasLocation" x="1991" y="55"/>
         </scene>
         <!--Cold Call Entry View Controller - New-->
         <scene sceneID="EYg-Pv-kmb">
@@ -355,17 +429,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7vC-4R-JWG">
-                                        <rect key="frame" x="20" y="307" width="285" height="113"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="3fm-TJ-v1h" id="IIa-bO-VAO"/>
-                                        </connections>
-                                    </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bit-yP-P4U">
                                         <rect key="frame" x="21" y="287" width="46" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -404,22 +467,33 @@
                                         <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A5s-ev-x6d">
+                                        <rect key="frame" x="20" y="311" width="285" height="113"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3fm-TJ-v1h" id="r4v-23-gJI"/>
+                                        </connections>
+                                    </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calls:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfA-bh-IaH">
                                         <rect key="frame" x="59" y="510" width="43" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meetings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krD-aK-rqz">
                                         <rect key="frame" x="124" y="510" width="76" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sold:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUy-30-1Bh">
                                         <rect key="frame" x="222" y="510" width="40" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WG9-hA-pgI">
@@ -440,7 +514,17 @@
                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPY-Zg-38i">
+                                        <rect key="frame" x="139" y="539" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="tCr-Ob-32w" kind="push" id="Pm2-de-h7r"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="3fm-TJ-v1h" id="GHC-2v-ieY"/>
                                 </connections>
@@ -467,13 +551,37 @@
                         <outlet property="txtBusinessName" destination="j5i-Ox-UXT" id="D4B-dF-3YE"/>
                         <outlet property="txtCity" destination="M16-Di-ClU" id="qny-xG-ZLb"/>
                         <outlet property="txtContact" destination="lMr-em-U6b" id="Ndh-pJ-e3A"/>
-                        <outlet property="txtNote" destination="7vC-4R-JWG" id="MjR-aN-w9H"/>
+                        <outlet property="txtNote" destination="A5s-ev-x6d" id="u5L-Tu-Fvp"/>
                         <outlet property="txtStreetAddress" destination="UtJ-o3-HYZ" id="CG7-5E-Dyg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MDo-xW-axn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="768" y="62"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="trw-zn-O9k">
+            <objects>
+                <viewController id="tCr-Ob-32w" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W5I-0d-1AD"/>
+                        <viewControllerLayoutGuide type="bottom" id="4g4-LN-4aB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u32-a2-e4h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icc-f7-kaF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="750"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z9R-na-3wU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSw-0j-KpH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768" y="736"/>
         </scene>
         <!--Cold Calls Navigation Controller-->
         <scene sceneID="ZoR-fE-n6D">
@@ -499,8 +607,5 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="daW-ca-tQm"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

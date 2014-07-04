@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Jason Crump. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
-class ColdCallsNavigationController: UINavigationController {
+class ColdCallsNavigationController: UINavigationController, UINavigationControllerDelegate {
 
+
+    
 }

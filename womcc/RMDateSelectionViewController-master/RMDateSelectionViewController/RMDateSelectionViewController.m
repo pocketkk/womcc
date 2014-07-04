@@ -24,6 +24,8 @@
 //  THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 @interface NSDate (Rounding)
 
 - (NSDate *)dateByRoundingToMinutes:(NSInteger)minutes;

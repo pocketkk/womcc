@@ -11,6 +11,20 @@
 		770DB10519550C8000E9E3B6 /* womcc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 770DB10319550C8000E9E3B6 /* womcc.xcdatamodeld */; };
 		770DB10719550C8000E9E3B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770DB10619550C8000E9E3B6 /* Images.xcassets */; };
 		770DB11319550C8000E9E3B6 /* womccTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770DB11219550C8000E9E3B6 /* womccTests.swift */; };
+		770DB11F19550F7500E9E3B6 /* ColdCallEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770DB11E19550F7500E9E3B6 /* ColdCallEntryViewController.swift */; };
+		770DB1211956690500E9E3B6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770DB1201956690500E9E3B6 /* CoreLocation.framework */; };
+		7723E9D4195B749300BF120D /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723E9D3195B749300BF120D /* CoreDataHelper.swift */; };
+		7728D4541961B10A00509ABB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7728D4531961B10A00509ABB /* UIViewExtensions.swift */; };
+		7728D4561961C21E00509ABB /* ColdCallsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7728D4551961C21E00509ABB /* ColdCallsNavigationController.swift */; };
+		7728D4581962038500509ABB /* ColdCallsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7728D4571962038500509ABB /* ColdCallsScrollView.swift */; };
+		7728D45A19621E0600509ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7728D45919621E0600509ABB /* Main.storyboard */; };
+		7728D47E196479F300509ABB /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7728D462196479F200509ABB /* RMDateSelectionViewController.m */; };
+		775F5CAC195FA5EE00DC19F3 /* test_profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 775F5CAB195FA5EE00DC19F3 /* test_profile.jpg */; };
+		77607A0B195B7F65009CC747 /* ColdCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77607A0A195B7F65009CC747 /* ColdCalls.swift */; };
+		77AC1BCC195DD17900FF82D1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC1BCB195DD17900FF82D1 /* Date.swift */; };
+		77AD52C11957A8130098359A /* ColdCallsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AD52C01957A8130098359A /* ColdCallsTableViewController.swift */; };
+		77C2632419607FDF00DEE199 /* ColdCallsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2632319607FDF00DEE199 /* ColdCallsDetailViewController.swift */; };
+		77C263261960CA5B00DEE199 /* ColdCallsEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C263251960CA5B00DEE199 /* ColdCallsEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +46,22 @@
 		770DB10C19550C8000E9E3B6 /* womccTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = womccTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		770DB11119550C8000E9E3B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		770DB11219550C8000E9E3B6 /* womccTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = womccTests.swift; sourceTree = "<group>"; };
+		770DB11E19550F7500E9E3B6 /* ColdCallEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColdCallEntryViewController.swift; sourceTree = "<group>"; };
+		770DB1201956690500E9E3B6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7723E9D3195B749300BF120D /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		7728D4531961B10A00509ABB /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		7728D4551961C21E00509ABB /* ColdCallsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColdCallsNavigationController.swift; sourceTree = "<group>"; };
+		7728D4571962038500509ABB /* ColdCallsScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColdCallsScrollView.swift; sourceTree = "<group>"; };
+		7728D45919621E0600509ABB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7728D461196479F200509ABB /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMDateSelectionViewController.h; path = "RMDateSelectionViewController-master/RMDateSelectionViewController/RMDateSelectionViewController.h"; sourceTree = "<group>"; };
+		7728D462196479F200509ABB /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMDateSelectionViewController.m; path = "RMDateSelectionViewController-master/RMDateSelectionViewController/RMDateSelectionViewController.m"; sourceTree = "<group>"; };
+		7728D4C01964862800509ABB /* womcc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "womcc-Bridging-Header.h"; sourceTree = "<group>"; };
+		775F5CAB195FA5EE00DC19F3 /* test_profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_profile.jpg; sourceTree = "<group>"; };
+		77607A0A195B7F65009CC747 /* ColdCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColdCalls.swift; sourceTree = "<group>"; };
+		77AC1BCB195DD17900FF82D1 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		77AD52C01957A8130098359A /* ColdCallsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColdCallsTableViewController.swift; sourceTree = "<group>"; };
+		77C2632319607FDF00DEE199 /* ColdCallsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColdCallsDetailViewController.swift; sourceTree = "<group>"; };
+		77C263251960CA5B00DEE199 /* ColdCallsEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColdCallsEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				770DB1211956690500E9E3B6 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +86,7 @@
 		770DB0F319550C8000E9E3B6 = {
 			isa = PBXGroup;
 			children = (
+				770DB1201956690500E9E3B6 /* CoreLocation.framework */,
 				770DB0FE19550C8000E9E3B6 /* womcc */,
 				770DB10F19550C8000E9E3B6 /* womccTests */,
 				770DB0FD19550C8000E9E3B6 /* Products */,
@@ -73,10 +105,25 @@
 		770DB0FE19550C8000E9E3B6 /* womcc */ = {
 			isa = PBXGroup;
 			children = (
+				7728D4C01964862800509ABB /* womcc-Bridging-Header.h */,
+				7728D461196479F200509ABB /* RMDateSelectionViewController.h */,
+				7728D462196479F200509ABB /* RMDateSelectionViewController.m */,
+				7728D45919621E0600509ABB /* Main.storyboard */,
 				770DB10119550C8000E9E3B6 /* AppDelegate.swift */,
-				770DB10619550C8000E9E3B6 /* Images.xcassets */,
+				7728D4551961C21E00509ABB /* ColdCallsNavigationController.swift */,
+				770DB11E19550F7500E9E3B6 /* ColdCallEntryViewController.swift */,
+				77AD52C01957A8130098359A /* ColdCallsTableViewController.swift */,
+				77C2632319607FDF00DEE199 /* ColdCallsDetailViewController.swift */,
+				77C263251960CA5B00DEE199 /* ColdCallsEditViewController.swift */,
 				770DB10319550C8000E9E3B6 /* womcc.xcdatamodeld */,
+				770DB10619550C8000E9E3B6 /* Images.xcassets */,
+				775F5CAB195FA5EE00DC19F3 /* test_profile.jpg */,
 				770DB0FF19550C8000E9E3B6 /* Supporting Files */,
+				77607A0A195B7F65009CC747 /* ColdCalls.swift */,
+				7723E9D3195B749300BF120D /* CoreDataHelper.swift */,
+				77AC1BCB195DD17900FF82D1 /* Date.swift */,
+				7728D4531961B10A00509ABB /* UIViewExtensions.swift */,
+				7728D4571962038500509ABB /* ColdCallsScrollView.swift */,
 			);
 			path = womcc;
 			sourceTree = "<group>";
@@ -155,6 +202,7 @@
 				TargetAttributes = {
 					770DB0FB19550C8000E9E3B6 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 78RWM7UYG3;
 					};
 					770DB10B19550C8000E9E3B6 = {
 						CreatedOnToolsVersion = 6.0;
@@ -185,7 +233,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7728D45A19621E0600509ABB /* Main.storyboard in Resources */,
 				770DB10719550C8000E9E3B6 /* Images.xcassets in Resources */,
+				775F5CAC195FA5EE00DC19F3 /* test_profile.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +253,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7728D47E196479F300509ABB /* RMDateSelectionViewController.m in Sources */,
+				7728D4541961B10A00509ABB /* UIViewExtensions.swift in Sources */,
+				7723E9D4195B749300BF120D /* CoreDataHelper.swift in Sources */,
 				770DB10219550C8000E9E3B6 /* AppDelegate.swift in Sources */,
+				77AD52C11957A8130098359A /* ColdCallsTableViewController.swift in Sources */,
+				77C2632419607FDF00DEE199 /* ColdCallsDetailViewController.swift in Sources */,
+				77AC1BCC195DD17900FF82D1 /* Date.swift in Sources */,
+				7728D4561961C21E00509ABB /* ColdCallsNavigationController.swift in Sources */,
+				77C263261960CA5B00DEE199 /* ColdCallsEditViewController.swift in Sources */,
+				77607A0B195B7F65009CC747 /* ColdCalls.swift in Sources */,
+				770DB11F19550F7500E9E3B6 /* ColdCallEntryViewController.swift in Sources */,
 				770DB10519550C8000E9E3B6 /* womcc.xcdatamodeld in Sources */,
+				7728D4581962038500509ABB /* ColdCallsScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +373,8 @@
 				INFOPLIST_FILE = womcc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "womcc/womcc-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -323,6 +386,8 @@
 				INFOPLIST_FILE = womcc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "womcc/womcc-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -381,6 +446,7 @@
 				770DB11819550C8000E9E3B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		770DB11919550C8000E9E3B6 /* Build configuration list for PBXNativeTarget "womccTests" */ = {
 			isa = XCConfigurationList;
@@ -389,6 +455,7 @@
 				770DB11B19550C8000E9E3B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
